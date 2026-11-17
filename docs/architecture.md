@@ -305,3 +305,15 @@ Holding relational database connections open while awaiting external HTTP gatewa
 - **Repository Modules:** `src/modules/payments/payment.service.ts`, `src/api/middleware/error.middleware.ts`, `src/database/connection.ts`, `docker-compose.yml`.
 - **Associated Part B Scenarios:** `FS-14` (connection pool exhaustion & backpressure).
 - **Test Evidence:** `tests/case-studies/C5-connection-pool-stampede.test.ts` (2/2 PASS).
+
+---
+
+## 5. Architecture Decision Records (ADRs)
+
+To document fundamental design decisions and technology choices as prescribed in Part D and Part E of the project specification, the following formal ADRs are maintained:
+
+1. **[ADR-001: Selection of Language, Framework, and Database Stack](adr/ADR-001-language-and-framework-selection.md)** (Day 1–2 Deliverable)  
+   Evaluates Python FastAPI vs. Node.js/TypeScript vs. Java Spring Boot, formally justifying the selection of TypeScript, Express.js, Knex.js, and PostgreSQL 15+.
+2. **[ADR-002: Payment Gateway Simulation and Failure Injection Architecture](adr/ADR-002-gateway-simulation-and-failure-injection.md)** (Day 5–6 Deliverable)  
+   Details the design of uniform mock gateway adapters (Razorpay, Stripe, PayU, UPI), simulating the 5 prescribed failure modes (success, timeout, 5xx, decline, rate limit) with configurable latencies.
+
